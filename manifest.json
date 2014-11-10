@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Thaumatrope",
+  "description": "keybase.io encrypted tweets",
+  "version": "0.1",
+
+  "permissions": [
+    "storage",
+    "https://api.github.com/",
+    "https://keybase.io/",
+    "https://twitter.com/"
+  ],
+
+  "browser_action": {
+      "default_icon": "thaumatrope.png",
+      "default_title": "Thaumatrope Preferences",
+      "default_popup": "popup.html"
+  },
+
+  "content_scripts": [{
+    "matches": ["https://twitter.com/*"],
+    "js": ["kbpgp-1.0.0-min.js", "superagent.js", "extension.js"]
+  }]
+}
